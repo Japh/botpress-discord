@@ -25,6 +25,18 @@ const handleText = (event, next, discord) => {
   //return handlePromise(next, discord.createMessage(channelId, {"content": text, "embed": embed}))
 }
 
+const handleTyping = (event, next, discord) => {
+  if(event.platform !== "discord" || event.type !== "typing") {
+    return next()
+  }
+
+  const channelId = event.raw.channelId
+  const text = event.text
+  const raw = (typeof event.raw !== "string") ? event.raw : {};
+
+  return handlePromise(next, discord.createTyping(channelId, {"content": text}))
+}
+
 const handleAttachment = (event, next, discord) => {
   if(event.platform !== "discord" || event.type !== "attachment") {
     return next()
