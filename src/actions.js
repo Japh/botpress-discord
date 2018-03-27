@@ -55,7 +55,7 @@ const createTextUpdate = (chId, msgId, content) => {
     }
   }
 }
-
+/*
 const createTyping = (chId, txt, extra = {}) => {
 
   let raw = Object.assign({
@@ -70,7 +70,7 @@ const createTyping = (chId, txt, extra = {}) => {
     raw: raw
   }
 }
-
+*/
 module.exports = {
   createText,
   createAttachment,
