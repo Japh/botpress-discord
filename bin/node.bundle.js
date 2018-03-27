@@ -554,10 +554,12 @@ module.exports =
 	    }
 	  };
 	};
-	/*
-	const createTyping = (chId, txt, extra = {}) => {
 	
-	  let raw = Object.assign({
+	var createTyping = function createTyping(chId, txt) {
+	  var extra = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	
+	
+	  var raw = Object.assign({
 	    channelId: chId,
 	    message: txt.trim()
 	  }, extra);
@@ -567,9 +569,9 @@ module.exports =
 	    type: "typing",
 	    text: "",
 	    raw: raw
-	  }
-	}
-	*/
+	  };
+	};
+	
 	module.exports = {
 	  createText: createText,
 	  createAttachment: createAttachment,
