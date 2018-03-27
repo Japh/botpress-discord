@@ -56,6 +56,21 @@ const createTextUpdate = (chId, msgId, content) => {
   }
 }
 
+const createTyping = (chId, txt, extra = {}) => {
+
+  let raw = Object.assign({
+    channelId: chId,
+    message: txt.trim()
+  }, extra);
+
+  return {
+    platform: "discord",
+    type: "typing",
+    text: "",
+    raw: raw
+  }
+}
+
 module.exports = {
   createText,
   createAttachment,
