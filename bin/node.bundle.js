@@ -338,7 +338,7 @@ module.exports =
 	  var text = event.text;
 	  var raw = typeof event.raw !== "string" ? event.raw : {};
 	
-	  return handlePromise(next, discord.createMessage(channelId, { "content": text }));
+	  return handlePromise(next, discord.sendTyping(channelId, { "content": text }));
 	};
 	
 	var handleAttachment = function handleAttachment(event, next, discord) {
