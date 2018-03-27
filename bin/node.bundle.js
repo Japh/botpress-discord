@@ -329,6 +329,18 @@ module.exports =
 	  //return handlePromise(next, discord.createMessage(channelId, {"content": text, "embed": embed}))
 	};
 	
+	var handleTyping = function handleTyping(event, next, discord) {
+	  if (event.platform !== "discord" || event.type !== "typing") {
+	    return next();
+	  }
+	
+	  var channelId = event.raw.channelId;
+	  var text = event.text;
+	  var raw = typeof event.raw !== "string" ? event.raw : {};
+	
+	  return handlePromise(next, discord.createTyping(channelId, { "content": text }));
+	};
+	
 	var handleAttachment = function handleAttachment(event, next, discord) {
 	  if (event.platform !== "discord" || event.type !== "attachment") {
 	    return next();
