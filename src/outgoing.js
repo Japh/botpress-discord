@@ -96,6 +96,7 @@ const handleTextUpdate = (event, next, discord) => {
 
 module.exports = {
   "text": handleText,
+  "typing": handleTyping,
   "attachment": handleAttachment,
   "image": handleImage,
   "textUpdate": handleTextUpdate,

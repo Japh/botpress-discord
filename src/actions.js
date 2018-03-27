@@ -73,6 +73,7 @@ const createTyping = (chId, txt, extra = {}) => {
 
 module.exports = {
   createText,
+  createTyping,
   createAttachment,
   createImage,
   createTextUpdate

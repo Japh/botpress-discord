@@ -394,6 +394,7 @@ module.exports =
 	
 	module.exports = {
 	  "text": handleText,
+	  "typing": handleTyping,
 	  "attachment": handleAttachment,
 	  "image": handleImage,
 	  "textUpdate": handleTextUpdate,
@@ -586,6 +587,7 @@ module.exports =
 	
 	module.exports = {
 	  createText: createText,
+	  createTyping: createTyping,
 	  createAttachment: createAttachment,
 	  createImage: createImage,
 	  createTextUpdate: createTextUpdate
