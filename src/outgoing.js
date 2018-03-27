@@ -34,7 +34,7 @@ const handleTyping = (event, next, discord) => {
   const text = event.text
   const raw = (typeof event.raw !== "string") ? event.raw : {};
 
-  return handlePromise(next, discord.createTyping(channelId, {"content": text}))
+  return handlePromise(next, discord.createMessage(channelId, {"content": text}))
 }
 
 const handleAttachment = (event, next, discord) => {
